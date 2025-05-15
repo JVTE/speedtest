@@ -1,0 +1,30 @@
+## 🛠 Como Gerar um Executável (.exe) para Aplicações Streamlit
+
+Este guia mostra como empacotar uma aplicação Python feita com **Streamlit** (como `speedtest_app.py`) em um arquivo `.exe` para Windows utilizando o **PyInstaller**.
+
+---
+
+## ✅ Requisitos
+
+- Python 3.x instalado
+- Pip atualizado
+- Dependências instaladas:
+  ```bash
+  pip install streamlit speedtest-cli pyinstaller
+
+## Crie um arquivo chamado launch.py com o seguinte conteudo:
+
+import os
+
+os.system("streamlit run speedtest_app.py")
+
+# Estrutura do Projeto 
+  .
+  ├── speedtest_app.py      # Seu app principal com Streamlit
+  ├── launch.py             # Script launcher que roda o app
+  ├── README.md             # Este arquivo
+
+# Gerando o executavel com PyInstaller
+
+pyinstaller --onefile launch.py
+
